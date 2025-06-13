@@ -1,46 +1,86 @@
-body{
-    background-color: hsl(216, 15%, 48%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: auto;
-    margin: auto;
-}
-main{
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgb(247, 245, 241);
-    border-radius: 1.25rem;
-}
-.imageCard{
-    width: 100%;
-    border-radius: 10%; 
-    padding: 1.25rem;
-
-}
-.qrCode{
-    width: 100%;
-    padding: auto;
-    height: auto;
-    border-radius: 12px;
-}
-.textCard{
-    border-radius: 1.25rem;
-    padding: 1.25rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: fit-content;
+/* === GLOBAL RESET & BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width/height */
 }
 
-h3{
-    font-weight: 700;
+body {
+  background-color: hsl(216, 15%, 48%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif; /* Matches design font */
+  padding: 1rem; /* Small padding to prevent tight edge clipping on small screens */
 }
+
+/* === MAIN CARD CONTAINER === */
+main {
+  background-color: white;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer, realistic shadow */
+  width: 100%;
+  max-width: 360px; /* Fixed max width for design consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevents image overflow on small screens */
+}
+
+/* === IMAGE SECTION === */
+.imageCard {
+  width: 100%;
+  padding: 1rem;
+}
+
+.qrCode {
+  width: 100%;
+  display: block;
+  border-radius: 0.75rem;
+  object-fit: cover; /* Ensures image fills without distortion */
+}
+
+/* === TEXT SECTION === */
+.textCard {
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem; /* Adds spacing between heading and paragraph */
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: hsl(218, 44%, 22%);
+}
+
+.textCard p {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: hsl(220, 15%, 55%);
+  line-height: 1.5;
+  max-width: 90%; /* Optional, helps limit text width */
+}
+
+/* === COMMENTS ON REMOVED/CHANGED STYLES === */
+
+/*
+1. REMOVED: 
+   - padding: auto; → auto is invalid for padding, doesn't do anything
+   - box-shadow: 20px; → not a valid value, replaced with realistic shadow
+   - width: auto; → redundant in `main`, replaced with max-width for control
+
+2. CHANGED:
+   - width: 495px on qrCode → replaced with 100% to make image responsive inside container
+   - textCard max-width: fit-content; → replaced by max-width on text itself if needed
+
+3. SUGGESTED:
+   - Added object-fit: cover on image → avoids squishing/stretching
+   - Used Google Font 'Outfit' (should be linked in HTML or via @import)
+   - Added flex gap for cleaner spacing
+   - Used RGBA for softer shadow instead of a near-white tone
+*/
