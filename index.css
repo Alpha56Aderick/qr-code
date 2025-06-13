@@ -1,0 +1,46 @@
+body{
+    background-color: hsl(216, 15%, 48%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    margin: auto;
+}
+main{
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgb(247, 245, 241);
+    border-radius: 1.25rem;
+}
+.imageCard{
+    width: 100%;
+    border-radius: 10%; 
+    padding: 1.25rem;
+
+}
+.qrCode{
+    width: 100%;
+    padding: auto;
+    height: auto;
+    border-radius: 12px;
+}
+.textCard{
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+}
+
+h3{
+    font-weight: 700;
+}
